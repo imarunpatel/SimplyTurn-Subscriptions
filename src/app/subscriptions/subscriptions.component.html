@@ -72,10 +72,11 @@
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>Full Access</li>
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>Source Files</li>
                                         </ul>
-                                        <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-primary mt-4">Buy Now</a>
                                     </div>
                                 </div>
                             </div><!--end col-->
+
                             
                             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                                 <div class="card pricing-rates business-rate shadow bg-white border-0 rounded">
@@ -93,7 +94,7 @@
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>Source Files</li>
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>Free Appointments</li>
                                         </ul>
-                                        <a href="javascript:void(0)" class="btn btn-primary mt-4">Get Started</a>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-primary mt-4">Get Started</a>
                                     </div>
                                 </div>
                             </div><!--end col-->
@@ -114,7 +115,7 @@
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>1 Domain Free</li>
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>Enhanced Security</li>
                                         </ul>
-                                        <a href="javascript:void(0)" class="btn btn-primary mt-4">Try It Now</a>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-primary mt-4">Try It Now</a>
                                     </div>
                                 </div>
                             </div><!--end col-->
@@ -136,7 +137,7 @@
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>1 Domain Free</li>
                                             <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><span class="iconify" data-icon="uil-check-circle" data-inline="false"></span></span>Free Installment</li>
                                         </ul>
-                                        <a href="javascript:void(0)" class="btn btn-primary mt-4">Started Now</a>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-primary mt-4">Started Now</a>
                                     </div>
                                 </div>
                             </div><!--end col-->
@@ -424,3 +425,129 @@
     </div><!--end container-->
 </section><!--end section-->
 <!-- FAQ n Contact End -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 *ngIf="firstStep" class="modal-title" id="staticBackdropLabel">Company Details</h5>
+          <h5 *ngIf="secondStep" class="modal-title" id="staticBackdropLabel">Personal Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div *ngIf="firstStep">
+                <div class="form-group">
+                    <label>Company Name<span class="text-danger">*</span></label>
+                    <div class="position-relative">
+                        <i class="far fa-building"></i>
+                        <input name="name" id="name" type="text" class="form-control pl-5" placeholder="Company Name :">
+                    </div>
+                </div>
+                <h7 class="text-muted">Number of Employeees</h7>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      Just You
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      2-9
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                    <label class="form-check-label" for="exampleRadios3">
+                      100-299
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4" >
+                    <label class="form-check-label" for="exampleRadios3">
+                      300+
+                    </label>
+                  </div>
+    
+                  <div class="form-group mt-3">
+                    <label>Contry<span class="text-danger">*</span></label>
+                    <div class="position-relative country-select">
+                        <i class="fas fa-globe-asia"></i>
+                        <select id="inputState" class="form-control pl-5">
+                          <option selected>Choose...</option>
+                          <option>India</option>
+                          <option>Nepal</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+              
+            <div *ngIf="secondStep">
+                <div class="form-group">
+                  <label
+                    >First Name <span class="text-danger">*</span></label
+                  >
+                  <div class="position-relative">
+                    <i class="far fa-user"></i>
+                    <input
+                      name="name"
+                      id="name"
+                      type="text"
+                      class="form-control pl-5"
+                      placeholder="First Name :"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label
+                    >Last Name <span class="text-danger">*</span></label
+                  >
+                  <div class="position-relative">
+                    <i class="far fa-user"></i>
+                    <input
+                      name="name"
+                      id="name"
+                      type="text"
+                      class="form-control pl-5"
+                      placeholder="First Name :"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label
+                    >Email <span class="text-danger">*</span></label
+                  >
+                  <div class="position-relative">
+                      <i class="far fa-envelope"></i>
+                    <input
+                      name="name"
+                      id="name"
+                      type="email"
+                      class="form-control pl-5"
+                      placeholder="First Name :"
+                    />
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <!-- <button *ngIf="secondStep" type="button" (click)="prevStep()" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <!-- <button *ngIf="secondStep" type="button" (click)="prevStep()">Close</button> -->
+          <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+          <div *ngIf="firstStep" class="firstStep">
+              <button (click)="nextStep()" class="btn btn-primary">Next</button>
+          </div>
+          <div *ngIf="secondStep" class="secondStep">
+            <button (click)="prevStep()" class="btn btn-outline-secondary">Back</button>
+            <button (click)="nextStep()" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

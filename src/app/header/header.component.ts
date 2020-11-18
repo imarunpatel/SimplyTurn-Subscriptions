@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PagesService } from '../pages/pages.service';
 
 declare var $: any;
 
@@ -8,7 +9,9 @@ declare var $: any;
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  showHeader;
+
+  constructor(private pageService: PagesService) {}
 
   ngOnInit(): void {
     $(function () {
@@ -44,5 +47,12 @@ export class HeaderComponent implements OnInit {
         $(this).parent().parent().parent().parent().parent().addClass('active');
       }
     });
+
+    this.pageService.getErrorPageStatus().subscribe(
+      (data: any) => {
+        console.log('res', data);
+        this.showHeader = data;
+      }
+    )
   }
 }

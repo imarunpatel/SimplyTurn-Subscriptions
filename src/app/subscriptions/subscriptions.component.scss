@@ -300,3 +300,54 @@
       }
   }
 }
+
+.modal-dialog {
+  .modal-body {
+    .country-select {
+      width: 100%;
+    }
+  }
+  
+}
+
+.modal-footer {
+  .firstStep {
+    width: 100%;
+    button {
+      width: 100%;
+    }
+  }
+  .secondStep {
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.modal-body {
+
+  .position-relative {
+    i {
+      position: absolute;
+      margin: 2.5% 0 0 4%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .modal-body {
+    .position-relative {
+      i {
+        margin-top: 4%;
+      }
+    }
+  }
+  
+}
+// @media (max-width: 500px) {
+//   .position-relative {
+//     i {
+//       margin: 4% 0 0 7%;
+//     }
+//   }
+// }
