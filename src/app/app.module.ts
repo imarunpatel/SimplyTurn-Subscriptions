@@ -12,6 +12,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-service.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { CommingSoonComponent } from './pages/comming-soon/comming-soon.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-servi
     ContactUsComponent,
     ErrorComponent,
     ThankYouComponent,
-    TermsOfServiceComponent
+    TermsOfServiceComponent,
+    PrivacyPolicyComponent,
+    CommingSoonComponent
   ],
   imports: [
     BrowserModule,

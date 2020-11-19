@@ -664,6 +664,17 @@ p {
 //   }
 // }
 
+.bg-home {
+  height: 100vh;
+  background-size: cover;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  background-position: center center;
+}
+
+
 .bg-light {
   background-color: #f8f9fc !important;
 }
@@ -774,4 +785,30 @@ p {
   width: 65px;
   line-height: 65px;
   background-color: rgba(47, 85, 212, 0.1);
+}
+
+
+.bg-overlay {
+  background-color: rgba(60, 72, 88, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-overlay-gradient {
+  background-color: rgba(47, 85, 212, 0.6);
+}
+
+.bg-overlay-white {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-overlay-gradient2 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2eca8b), color-stop(#2f55d4), to(#2eca8b));
+  background-image: linear-gradient(90deg, #2eca8b, #2f55d4, #2eca8b);
+  opacity: 0.5;
 }
