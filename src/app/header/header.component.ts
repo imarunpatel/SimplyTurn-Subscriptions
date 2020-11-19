@@ -56,8 +56,4 @@ export class HeaderComponent implements OnInit {
       }
     )
   }
-
-  buyNowClick() {
-    this.route.navigate(['/subscriptions#'])
-  }
 }
