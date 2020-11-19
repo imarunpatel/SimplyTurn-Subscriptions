@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PagesService } from '../pages/pages.service';
 
 declare var $: any;
@@ -11,7 +12,7 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
   showHeader;
 
-  constructor(private pageService: PagesService) {}
+  constructor(private pageService: PagesService, private route: Router) {}
 
   ngOnInit(): void {
     $(function () {
@@ -54,5 +55,9 @@ export class HeaderComponent implements OnInit {
         this.showHeader = data;
       }
     )
+  }
+
+  buyNowClick() {
+    this.route.navigate(['/subscriptions#'])
   }
 }
