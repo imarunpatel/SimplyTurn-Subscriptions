@@ -14,6 +14,7 @@ import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 import { TermsOfServiceComponent } from './pages/terms-of-service/terms-of-service.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { CommingSoonComponent } from './pages/comming-soon/comming-soon.component';
+import { MaintenanceComponent } from './pages/maintenance/maintenance.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CommingSoonComponent } from './pages/comming-soon/comming-soon.componen
     ThankYouComponent,
     TermsOfServiceComponent,
     PrivacyPolicyComponent,
-    CommingSoonComponent
+    CommingSoonComponent,
+    MaintenanceComponent
   ],
   imports: [
     BrowserModule,
