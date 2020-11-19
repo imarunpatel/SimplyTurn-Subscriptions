@@ -9,6 +9,9 @@ export class SubscriptionsComponent implements OnInit {
 
   firstStep = true;
   secondStep = false;
+  thirdStep = false;
+  fourthStep = false;
+  yourDomain = '.simplyturn.com'
 
   constructor() { }
 
@@ -23,6 +26,38 @@ export class SubscriptionsComponent implements OnInit {
   prevStep() {
     this.firstStep = true;
     this.secondStep = false;
+  }
+
+  prevThird() {
+    this.secondStep = true;
+    this.thirdStep = false;
+  }
+
+  prevFourth() {
+    this.thirdStep = true;
+    this.fourthStep = false;
+  }
+
+  thirdFormStep() {
+    this.secondStep = false;
+    this.thirdStep = true;
+  }
+
+  fourthFormStep() {
+    this.fourthStep = true;
+    this.thirdStep = false;
+  }
+
+  domainOptions = true;
+  changeDomainOptions(e) {
+    console.log('e', e.target.value);
+    this.domainOptions = !this.domainOptions;
+  }
+
+
+  addDomainPrefix(e) {
+    this.yourDomain = '.simplyturn.com'
+    this.yourDomain = e + this.yourDomain;
   }
 
 }

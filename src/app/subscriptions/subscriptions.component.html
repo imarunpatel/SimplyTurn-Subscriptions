@@ -434,6 +434,8 @@
         <div class="modal-header">
           <h5 *ngIf="firstStep" class="modal-title" id="staticBackdropLabel">Company Details</h5>
           <h5 *ngIf="secondStep" class="modal-title" id="staticBackdropLabel">Personal Details</h5>
+          <h5 *ngIf="thirdStep" class="modal-title" id="staticBackdropLabel">Domain Details</h5>
+          <h5 *ngIf="fourthStep" class="modal-title" id="staticBackdropLabel">Password</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -447,7 +449,7 @@
                         <input name="name" id="name" type="text" class="form-control pl-5" placeholder="Company Name :">
                     </div>
                 </div>
-                <h7 class="text-muted">Number of Employeees</h7>
+                <label>Number of Employees<span class="text-danger">*</span></label>
                     <div class="form-check">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                     <label class="form-check-label" for="exampleRadios1">
@@ -514,7 +516,7 @@
                       id="name"
                       type="text"
                       class="form-control pl-5"
-                      placeholder="First Name :"
+                      placeholder="Last Name :"
                     />
                   </div>
                 </div>
@@ -529,9 +531,93 @@
                       id="name"
                       type="email"
                       class="form-control pl-5"
-                      placeholder="First Name :"
+                      placeholder="Email Address :"
                     />
                   </div>
+                </div>
+            </div>
+
+            <div *ngIf="thirdStep" class="thirdStep">
+                <div class="form-check form-check-inline">
+                    <input (change)="changeDomainOptions($event)" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="haveDomain" checked>
+                    <label class="form-check-label" for="inlineRadio1">I have domain.</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input (change)="changeDomainOptions($event)" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="dontHaveDomain">
+                    <label class="form-check-label" for="inlineRadio2">I don't have domain.</label>
+                  </div>
+
+                  <div *ngIf="domainOptions" class="haveDomain mt-4">
+                    <div class="form-group">
+                        <div class="position-relative">
+                            <i class="far fa-building"></i>
+                          <input
+                            name="name"
+                            id="name"
+                            type="text"
+                            class="form-control pl-5"
+                            placeholder="Domain :"
+                          />
+                        </div>
+                      </div>
+                  </div>
+
+                  <div *ngIf="!domainOptions" class="dontHaveDomain mt-4">
+                    <div class="form-group">
+                        <div class="position-relative">
+                            <i class="fas fa-screwdriver"></i>
+                          <input
+                            (keyup)="addDomainPrefix($event.target.value)"
+                            name="name"
+                            id="name"
+                            type="text"
+                            class="form-control pl-5"
+                            placeholder="Prefix :"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="position-relative">
+                            <i class="far fa-building"></i>
+                          <input
+                            name="name"
+                            id="name"
+                            type="text"
+                            class="form-control pl-5"
+                            [placeholder]="yourDomain"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                  </div>
+            </div>
+
+            <div *ngIf="fourthStep" class="fourthStep">
+                <div class="form-group">
+                    <label>Password <span class="text-danger">*</span></label>
+                    <div class="position-relative">
+                        <i class="fas fa-key"></i>
+                        <input
+                            name="password"
+                            id="password"
+                            type="text"
+                            class="form-control pl-5"
+                            placeholder="Password"
+                        />
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Confirm Password <span class="text-danger">*</span></label>
+                    <div class="position-relative">
+                        <i class="fas fa-key"></i>
+                        <input
+                            name="cpassword"
+                            id="cpassword"
+                            type="text"
+                            class="form-control pl-5"
+                            placeholder="Confirm Password"
+                        />
+                        </div>
                 </div>
             </div>
 
@@ -545,7 +631,15 @@
           </div>
           <div *ngIf="secondStep" class="secondStep">
             <button (click)="prevStep()" class="btn btn-outline-secondary">Back</button>
-            <button (click)="nextStep()" class="btn btn-primary">Submit</button>
+            <button (click)="thirdFormStep()" class="btn btn-primary">Next</button>
+          </div>
+          <div *ngIf="thirdStep" class="secondStep">
+            <button (click)="prevThird()" class="btn btn-outline-secondary">Back</button>
+            <button (click)="fourthFormStep()" class="btn btn-primary">Next</button>
+          </div>
+          <div *ngIf="fourthStep" class="secondStep">
+            <button (click)="prevFourth()" class="btn btn-outline-secondary">Back</button>
+            <button class="btn btn-primary">Next</button>
           </div>
         </div>
       </div>
